@@ -62,11 +62,11 @@ scale = Vector2( 1.99952, 1.99952 )
 
 [node name="WallRRB" type="RigidBody2D" parent="Scenary" index="0"]
 
-editor/display_folded = true
+position = Vector2( -54.513, 0 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 0
+mode = 3
 mass = 1.0
 friction = 1.0
 bounce = 0.0
@@ -87,15 +87,16 @@ angular_damp = -1.0
 position = Vector2( -4.35242, -10.6157 )
 scale = Vector2( 1, 24.0169 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="WallLRB" type="RigidBody2D" parent="Scenary" index="1"]
 
 editor/display_folded = true
-position = Vector2( -1029, 0 )
+position = Vector2( -973.987, 0 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 0
+mode = 3
 mass = 1.0
 friction = 1.0
 bounce = 0.0
@@ -165,7 +166,7 @@ texture = ExtResource( 3 )
 
 [node name="PlayerRB" type="RigidBody2D" parent="." index="1"]
 
-position = Vector2( 1607.12, 918.937 )
+position = Vector2( 1667.84, 516.691 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -179,7 +180,7 @@ continuous_cd = 0
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
-can_sleep = true
+can_sleep = false
 linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
@@ -189,14 +190,14 @@ _sections_unfolded = [ "Applied Forces", "Material" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRB" index="0"]
 
-position = Vector2( -244.723, 57.8789 )
+position = Vector2( 9.52703, -10.4271 )
 scale = Vector2( 6.88286, 9.09087 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="Player" type="AnimatedSprite" parent="PlayerRB" index="1"]
 
-position = Vector2( -244.651, 53.7001 )
+position = Vector2( 9.59913, -14.6059 )
 scale = Vector2( 1.36813, 1.36813 )
 frames = SubResource( 4 )
 animation = "Walk"

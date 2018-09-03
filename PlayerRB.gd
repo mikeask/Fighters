@@ -8,13 +8,15 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
-
+	
+	
 func _physics_process(delta):
 	if(Input.is_action_just_pressed('ui_accept')):
-		apply_impulse(Vector2(0,-1000), Vector2(0, -1000))
+		
+		apply_impulse(Vector2(-10, 0), Vector2(0, -200))
 		$Player.play('Jump')
 #		linear_velocity = Vector2(0,-200)
-		print("aaa")
+		print($Player.global_position)
 		pass
 	if(Input.is_action_pressed('ui_right')):
 		$Player.play('Walk')
