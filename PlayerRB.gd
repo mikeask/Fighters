@@ -11,12 +11,12 @@ func _ready():
 	
 	
 func _physics_process(delta):
-	if(Input.is_action_just_pressed('ui_accept')):
-		
-		apply_impulse(Vector2(-10, 0), Vector2(0, -200))
+	if(Input.is_action_pressed('ui_accept')):
+		#http://kidscancode.org/blog/2017/12/godot3_kyn_rigidbody1/
+		apply_impulse(Vector2(25, 0), global_position-Vector2(0,-200))
 		$Player.play('Jump')
 #		linear_velocity = Vector2(0,-200)
-		print($Player.global_position)
+		print(transform.x)
 		pass
 	if(Input.is_action_pressed('ui_right')):
 		$Player.play('Walk')
