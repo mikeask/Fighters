@@ -1,0 +1,206 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Gradient (z -6).png" type="Texture" id=1]
+[ext_resource path="res://mtn (z -4).png" type="Texture" id=2]
+[ext_resource path="res://ground.png" type="Texture" id=3]
+[ext_resource path="res://PlayerRB.gd" type="Script" id=4]
+[ext_resource path="res://Character/character_0000_Layer-1.png" type="Texture" id=5]
+[ext_resource path="res://Character/character_0015_Layer-16.png" type="Texture" id=6]
+[ext_resource path="res://Character/character_0016_Layer-17.png" type="Texture" id=7]
+[ext_resource path="res://Character/character_0001_Layer-2.png" type="Texture" id=8]
+[ext_resource path="res://Character/character_0002_Layer-3.png" type="Texture" id=9]
+[ext_resource path="res://Character/character_0003_Layer-4.png" type="Texture" id=10]
+[ext_resource path="res://Character/character_0004_Layer-5.png" type="Texture" id=11]
+[ext_resource path="res://Character/character_0005_Layer-6.png" type="Texture" id=12]
+[ext_resource path="res://Character/character_0006_Layer-7.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 12.5635 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 34.4692, 14.6149 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Static",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 6.0
+} ]
+
+[node name="Node2D" type="Node2D" index="0"]
+
+[node name="Scenary" type="Node2D" parent="." index="0"]
+
+position = Vector2( 1984.88, 474.386 )
+scale = Vector2( 1.99952, 1.99952 )
+
+[node name="WallRRB" type="RigidBody2D" parent="Scenary" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenary/WallRRB" index="0"]
+
+position = Vector2( -4.35242, -10.6157 )
+scale = Vector2( 1, 24.0169 )
+shape = SubResource( 1 )
+
+[node name="WallLRB" type="RigidBody2D" parent="Scenary" index="1"]
+
+editor/display_folded = true
+position = Vector2( -1029, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenary/WallLRB" index="0"]
+
+position = Vector2( -4.35242, -10.6157 )
+scale = Vector2( 1, 24.0169 )
+shape = SubResource( 1 )
+
+[node name="GroundRB" type="RigidBody2D" parent="Scenary" index="2"]
+
+editor/display_folded = true
+position = Vector2( -534, 293 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 3
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenary/GroundRB" index="0"]
+
+position = Vector2( 14.3585, 4.95715 )
+scale = Vector2( 15.0894, 0.441823 )
+shape = SubResource( 2 )
+
+[node name="gradient" type="Sprite" parent="Scenary" index="3"]
+
+position = Vector2( -613.742, -135.018 )
+texture = ExtResource( 1 )
+
+[node name="mountain" type="Sprite" parent="Scenary" index="4"]
+
+position = Vector2( -504.789, 122.112 )
+scale = Vector2( 0.748328, 0.748328 )
+texture = ExtResource( 2 )
+
+[node name="ground" type="Sprite" parent="Scenary" index="5"]
+
+position = Vector2( -476.431, 109.517 )
+scale = Vector2( 0.261406, 0.310339 )
+texture = ExtResource( 3 )
+
+[node name="PlayerRB" type="RigidBody2D" parent="." index="1"]
+
+position = Vector2( 1607.12, 918.937 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 2
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 9.8
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 4 )
+_sections_unfolded = [ "Applied Forces", "Material" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRB" index="0"]
+
+position = Vector2( -244.723, 57.8789 )
+scale = Vector2( 6.88286, 9.09087 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="Player" type="AnimatedSprite" parent="PlayerRB" index="1"]
+
+position = Vector2( -244.651, 53.7001 )
+scale = Vector2( 1.36813, 1.36813 )
+frames = SubResource( 4 )
+animation = "Walk"
+frame = 5
+_sections_unfolded = [ "Transform" ]
+
+
